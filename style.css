@@ -21,17 +21,19 @@ input {
   border: 1px;
 }
 
-button {
+#findBtn {
   border-radius: 10px;
   border: 1px;
   padding: 15px 25px;
   cursor: pointer;
   color: azure;
   background: darkslateblue;
+  transition: all 0.3s ease;
 }
 
-button:hover {
+#findBtn:hover {
   background-color: blueviolet;
+  transform: scale(1.05);
 }
 
 .card {
