@@ -12,6 +12,7 @@ function displayCountryCard(country) {
 
   showResult.innerHTML = `
     <div class = "card">
+    <div class="card-content">
      <img src=" ${country.flags.png}" alt="Country Image" id="countryImage" >
         <div class = "left"> 
            
@@ -35,12 +36,14 @@ function displayCountryCard(country) {
             <p><strong>Map:</strong> <a href=${
               Object.values(country.maps)[0]
             }>Google Maps</a> <span id = "capital"></span></p>
-            <button class="fav-btn" onclick="toggleFavorite('${
+
+        </div>
+        </div>
+                <button class="fav-btn" onclick="toggleFavorite('${
               country.name.common
             }')">${heartIcon} Favorite</button>
-        </div>
-
     </div>
+
     `;
 }
 
