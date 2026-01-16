@@ -9,11 +9,6 @@ fetch("https://restcountries.com/v3.1/independent")
   .then((response) => response.json())
   .then((data) => {
     countryList = data;
-    //     data.forEach(element => {
-    //         console.log(element.name.common);
-
-    // document.getElementById("name").textContent=element.name.common;
-    //     });
   })
   .catch((error) => console.log(error));
 
@@ -71,6 +66,7 @@ findBtn.addEventListener("click", () => {
   }
   searchCountryByName(search);
 });
+
 function searchCountryByName(countryName) {
   const search = countryName.toLowerCase().trim();
   const country = countryList.find((c) =>

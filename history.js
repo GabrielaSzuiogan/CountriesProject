@@ -1,7 +1,5 @@
-console.log("tatatata");
-
 function saveHistory(searchTerm) {
-  let history = JSON.parse(localStorage.getItem("searchHistory")) || [];
+  let history = JSON.parse(localStorage.getItem("searchHistory")) || [];  //tbe
   history.unshift(searchTerm);
   history = history.slice(0, 10);
   history = [...new Set(history)];
