@@ -75,33 +75,31 @@ async function toggleFavoriteExpand(button, countryName) {
       detailsDiv.innerHTML = `
         <div class="fav-details-content">
           <p><strong>Official Name:</strong> ${
-            country.name.official || "N/A"
+            country.name.official 
           }</p>
-          <p><strong>Region:</strong> ${country.region || "N/A"}</p>
-          <p><strong>Subregion:</strong> ${country.subregion || "N/A"}</p>
+          <p><strong>Region:</strong> ${country.region }</p>
+          <p><strong>Subregion:</strong> ${country.subregion }</p>
           <p><strong>Capital:</strong> ${
-            country.capital ? country.capital.join(", ") : "N/A"
+            country.capital.join(", ") 
           }</p>
           <p><strong>Population:</strong> ${
-            country.population ? country.population.toLocaleString() : "N/A"
+            country.population.toLocaleString() 
           }</p>
           <p><strong>Area:</strong> ${
-            country.area ? country.area.toLocaleString() : "N/A"
+            country.area.toLocaleString() 
           } km²</p>
           <p><strong>Languages:</strong> ${
-            country.languages
-              ? Object.values(country.languages).join(", ")
-              : "N/A"
+           Object.values(country.languages).join(", ")
+            
           }</p>
           <p><strong>Currencies:</strong> ${
-            country.currencies
-              ? Object.entries(country.currencies)
+           Object.entries(country.currencies)
                   .map(([code, cur]) => `${cur.name} (${cur.symbol})`)
                   .join(", ")
-              : "N/A"
+              
           }</p>
           <p><strong>Timezones:</strong> ${
-            country.timezones ? country.timezones.join(", ") : "N/A"
+            country.timezones.join(", ") 
           }</p>
         </div>
       `;
