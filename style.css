@@ -35,7 +35,7 @@ input {
   background-color: blueviolet;
   transform: scale(1.05);
 }
- #showAllBtn {
+#showAllBtn {
   border-radius: 10px;
   border: 1px;
   padding: 15px 25px;
@@ -56,11 +56,12 @@ input {
   border-radius: 10px;
   width: 100%;
   justify-content: space-around;
-background: white;
-flex-direction: column;
+  background: white;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 .card-content {
-background: white;
+  background: white;
   max-width: 980px;
   margin: auto;
   padding: 20px 40px;
@@ -74,8 +75,7 @@ img {
   width: 250px;
   height: 250px;
   border-radius: 9px;
- margin-right: 10px;
-
+  margin-right: 10px;
 }
 
 #errMsg {
@@ -217,8 +217,8 @@ img {
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
- margin-bottom: 20px;
- margin-right: 45px;
+  margin-bottom: 20px;
+  margin-right: 45px;
   transition: all 0.3s ease;
 }
 
