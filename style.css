@@ -1,192 +1,191 @@
 body {
-    background: #EBF5F7;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding:50px;
+  background: #ebf5f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
 }
 
-.search-card{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 40px;
+.search-card {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
 }
 
-input{
-    outline: none;
-    padding: 15px;
-    font-size: 16px;
-    border-radius: 10px;
-    border: 1px;
- 
+input {
+  outline: none;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px;
 }
 
-button{
-    border-radius: 10px;
-    border: 1px;
-    padding: 15px 25px;
-    cursor: pointer;
-    color: azure;
-    background: darkslateblue;
+button {
+  border-radius: 10px;
+  border: 1px;
+  padding: 15px 25px;
+  cursor: pointer;
+  color: azure;
+  background: darkslateblue;
 }
 
-button:hover{
-    background-color: blueviolet;
+button:hover {
+  background-color: blueviolet;
 }
 
-.card{
-    background: white;
-    max-width: 980px;
-    margin: auto;
-    padding: 20px 40px;
-    border-radius: 10px;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
+.card {
+  background: white;
+  max-width: 980px;
+  margin: auto;
+  padding: 20px 40px;
+  border-radius: 10px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
 }
 
 img {
-    width: 150px;
-    height: 150px;
-    border-radius: 9px;
-    margin-right: 30px;
+  width: 150px;
+  height: 150px;
+  border-radius: 9px;
+  margin-right: 30px;
 }
 
-.right{
-    text-align: right;
-    padding-left: 100px;
+.right {
+  text-align: right;
+  padding-left: 100px;
 }
 
-.left{
-    text-align: left;
+.left {
+  text-align: left;
 }
 
 .pills-container {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .pill {
-    background: #6f42c1;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 16px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  background: #6f42c1;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .pill:hover {
-    background: #5a32a3;
-    transform: scale(1.05);
+  background: #5a32a3;
+  transform: scale(1.05);
 }
 
 #favoritesContainer {
-    max-width: 980px;
-    margin: 40px auto 0;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    width: 100%;
+  max-width: 980px;
+  margin: 40px auto 0;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  width: 100%;
 }
 
 #favoritesContainer h3 {
-    margin-top: 0;
-    color: #333;
+  margin-top: 0;
+  color: #333;
 }
 
 #favoritesContainer p {
-    text-align: center;
-    color: #999;
+  text-align: center;
+  color: #999;
 }
 
 .favorites-list {
-    display: grid;
-    gap: 15px;
+  display: grid;
+  gap: 15px;
 }
 
 .favorite-item {
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    border-left: 4px solid #ff6b6b;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #ff6b6b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .fav-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .fav-name {
-    font-weight: bold;
-    font-size: 16px;
-    color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
 }
 
 .remove-fav-btn {
-    background: #ff6b6b;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 .remove-fav-btn:hover {
-    background: #ff5252;
+  background: #ff5252;
 }
 
 .expand-btn {
-    background: #4ecdc4;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    width: 100%;
-    transition: all 0.3s ease;
+  background: #4ecdc4;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+  transition: all 0.3s ease;
 }
 
 .expand-btn:hover {
-    background: #45b3aa;
+  background: #45b3aa;
 }
 
 .fav-details {
-    margin-top: 10px;
-    padding: 15px;
-    background: #f0f9f9;
-    border-radius: 6px;
+  margin-top: 10px;
+  padding: 15px;
+  background: #f0f9f9;
+  border-radius: 6px;
 }
 
 .fav-details-content p {
-    margin: 8px 0;
-    font-size: 14px;
-    color: #555;
-    text-align: left;
+  margin: 8px 0;
+  font-size: 14px;
+  color: #555;
+  text-align: left;
 }
 
 .fav-btn {
-    background: #ff6b6b;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-top: 10px;
-    transition: all 0.3s ease;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
 }
 
 .fav-btn:hover {
-    background: #ff5252;
+  background: #ff5252;
 }
