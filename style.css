@@ -35,10 +35,25 @@ input {
   background-color: blueviolet;
   transform: scale(1.05);
 }
+ #showAllBtn {
+  border-radius: 10px;
+  border: 1px;
+  padding: 15px 25px;
+  cursor: pointer;
+  color: azure;
+  background: darkslateblue;
+  transition: all 0.3s ease;
+}
+
+#showAllBtn:hover {
+  background-color: blueviolet;
+  transform: scale(1.05);
+}
 
 .card {
   display: flex;
   align-items: end;
+  border-radius: 10px;
   width: 100%;
   justify-content: space-around;
 background: white;
@@ -56,10 +71,19 @@ background: white;
 }
 
 img {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   border-radius: 9px;
-  margin-right: 30px;
+ margin-right: 10px;
+
+}
+
+#errMsg {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .right {
@@ -69,6 +93,7 @@ img {
 
 .left {
   text-align: left;
+  padding-left: 50px;
 }
 
 .pills-container {

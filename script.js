@@ -5,6 +5,33 @@ let showResult = document.getElementById("showResult");
 
 let countryList = [];
 
+fetch("https://restcountries.com/v3.1/independent")
+  .then((response) => response.json())
+  .then((data) => {
+    countryList = data;
+    //     data.forEach(element => {
+    //         console.log(element.name.common);
+
+    // document.getElementById("name").textContent=element.name.common;
+    //     });
+  })
+  .catch((error) => console.log(error));
+
+findBtn.addEventListener("click", () => {
+  const search = countryInput.value.toLowerCase().trim();
+  if (!search) {
+    showResult.innerHTML = `
+    <div class = "card">
+        <p id="errMsg"><strong>Please enter a country name!</strong></p>
+        <img src="https://img.freepik.com/premium-vector/child-with-map-his-hands-asks-directions_650542-1436.jpg" alt="Country Image" id="countryImage" >
+        
+    </div>
+    `;
+    return;
+  }
+  searchCountryByName(search);
+});
+
 function displayCountryCard(country) {
   let showResult = document.getElementById("showResult");
   const isFav = isFavorite(country.name.common);
@@ -70,7 +97,7 @@ function searchCountryByName(countryName) {
     let showResult = document.getElementById("showResult");
     showResult.innerHTML = `
     <div class = "card">
-        <p><strong>No country found!</strong> <span id = "countryName"></span></p>
+        <p id="errMsg"><strong>No country found!</strong> <span id = "countryName"></span></p>
         <img src="https://img.freepik.com/premium-vector/child-with-map-his-hands-asks-directions_650542-1436.jpg" alt="Country Image" id="countryImage" >
         
     </div>
@@ -82,29 +109,4 @@ function searchCountryByName(countryName) {
   displayCountryCard(country);
 }
 
-fetch("https://restcountries.com/v3.1/independent")
-  .then((response) => response.json())
-  .then((data) => {
-    countryList = data;
-    //     data.forEach(element => {
-    //         console.log(element.name.common);
 
-    // document.getElementById("name").textContent=element.name.common;
-    //     });
-  })
-  .catch((error) => console.log(error));
-
-findBtn.addEventListener("click", () => {
-  const search = countryInput.value.toLowerCase().trim();
-  if (!search) {
-    showResult.innerHTML = `
-    <div class = "card">
-        <p><strong>Please enter a country name!</strong></p>
-        <img src="https://img.freepik.com/premium-vector/child-with-map-his-hands-asks-directions_650542-1436.jpg" alt="Country Image" id="countryImage" >
-        
-    </div>
-    `;
-    return;
-  }
-  searchCountryByName(search);
-});
