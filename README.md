@@ -1,4 +1,7 @@
 # CountriesProject
+<img width="700" height="400" alt="Screenshot 2026-01-16 at 17 26 54" src="https://github.com/user-attachments/assets/38120d98-fb63-42e8-8ae8-f9e3d6380f5d" />
+
+
  A simple web application that allows users to search for information about countries around the world.
 
 ## Features
