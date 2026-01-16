@@ -17,27 +17,11 @@ fetch("https://restcountries.com/v3.1/independent")
   })
   .catch((error) => console.log(error));
 
-findBtn.addEventListener("click", () => {
-  const search = countryInput.value.toLowerCase().trim();
-  if (!search) {
-    showResult.innerHTML = `
-    <div class = "card">
-        <p id="errMsg"><strong>Please enter a country name!</strong></p>
-        <img src="https://img.freepik.com/premium-vector/child-with-map-his-hands-asks-directions_650542-1436.jpg" alt="Country Image" id="countryImage" >
-        
-    </div>
-    `;
-    return;
-  }
-  searchCountryByName(search);
-});
-
-function displayCountryCard(country) {
-  let showResult = document.getElementById("showResult");
+function generateCountryCard(country) {
   const isFav = isFavorite(country.name.common);
   const heartIcon = isFav ? "❤️" : "🤍";
 
-  showResult.innerHTML = `
+  return `
     <div class = "card">
     <div class="card-content">
      <img src=" ${country.flags.png}" alt="Country Image" id="countryImage" >
@@ -49,9 +33,9 @@ function displayCountryCard(country) {
             <p><strong>Capital:</strong> <span id = "capital">${
               country.capital
             }</span></p>
-            <p><strong>Language:</strong> <span id = "countryName"> ${Object.values(
-              country.languages
-            ).join(", ")}</span></p>
+            <p><strong>Main language:</strong> <span id = "countryName"> ${
+              Object.values(country.languages)[0]
+            }</span></p>
             
         </div>
 
@@ -67,26 +51,26 @@ function displayCountryCard(country) {
         </div>
         </div>
                 <button class="fav-btn" onclick="toggleFavorite('${
-              country.name.common
-            }')">${heartIcon} Favorite</button>
+                  country.name.common
+                }')">${heartIcon} Favorite</button>
     </div>
+  `;
+}
 
+findBtn.addEventListener("click", () => {
+  const search = countryInput.value.toLowerCase().trim();
+  if (!search) {
+    showResult.innerHTML = `
+    <div class = "card">
+        <p id="errMsg"><strong>Please enter a country name!</strong></p>
+        <img src="https://img.freepik.com/premium-vector/child-with-map-his-hands-asks-directions_650542-1436.jpg" alt="Country Image" id="countryImage" >
+        
+    </div>
     `;
-}
-
-function toggleFavorite(countryName) {
-  if (isFavorite(countryName)) {
-    removeFavorite(countryName);
-  } else {
-    saveFavorite(countryName);
+    return;
   }
-
-  const country = countryList.find((c) => c.name.common === countryName);
-  if (country) {
-    displayCountryCard(country);
-  }
-}
-
+  searchCountryByName(search);
+});
 function searchCountryByName(countryName) {
   const search = countryName.toLowerCase().trim();
   const country = countryList.find((c) =>
@@ -109,4 +93,34 @@ function searchCountryByName(countryName) {
   displayCountryCard(country);
 }
 
+function displayAllCountriesCards(countries) {
+  showResult.innerHTML = "";
+  countries.forEach((country) => {
+    showResult.innerHTML += generateCountryCard(country);
+  });
+}
 
+showAllBtn.addEventListener("click", () => {
+  displayAllCountriesCards(countryList);
+});
+
+function displayCountryCard(country) {
+  let showResult = document.getElementById("showResult");
+  const isFav = isFavorite(country.name.common);
+  const heartIcon = isFav ? "❤️" : "🤍";
+
+  showResult.innerHTML = generateCountryCard(country);
+}
+
+function toggleFavorite(countryName) {
+  if (isFavorite(countryName)) {
+    removeFavorite(countryName);
+  } else {
+    saveFavorite(countryName);
+  }
+
+  const country = countryList.find((c) => c.name.common === countryName);
+  if (country) {
+    displayCountryCard(country);
+  }
+}
