@@ -3,6 +3,7 @@
 
 
  A simple web application that allows users to search for information about countries around the world.
+ You can access it by clicking on the link **Deployment** (in the right part of this message)
 
 ## Features
 
